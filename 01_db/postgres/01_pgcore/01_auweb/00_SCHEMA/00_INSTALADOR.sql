@@ -1,0 +1,8 @@
+-- CREANDO USER
+\i 01_auweb/00_SCHEMA/01_USER.sql
+
+-- CREANDO SCHEMAS
+\i 01_auweb/00_SCHEMA/02_SCHEMAS.sql
+
+
+

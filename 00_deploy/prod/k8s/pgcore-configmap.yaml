@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pgcore-config
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: ab_core
+  POSTGRES_USER: FS_AUWEB_US
+  POSTGRES_PASSWORD: FS_AUWEB_US

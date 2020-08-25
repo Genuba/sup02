@@ -1,0 +1,44 @@
+version: "3.7"
+services:
+  jenkins:
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+  pgcore: 
+    image: "postgres:latest"
+    container_name: "pgcore-service"
+    environment:
+      - POSTGRES_USER=FS_AUWEB_US
+      - POSTGRES_PASSWORD=FS_AUWEB_US
+      - POSTGRES_DB=ab_core
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./../../01_db/postgres/00_pgdata:/var/lib/postgresql/data
+      - ./../../01_db/postgres/01_pgcore:/var/lib/postgresql/01_pgcore
+  ngxadmin:
+    build: "./../../02_web/ngx-admin"
+    image: "ngxadmin"
+    container_name: "ngxadmin-service"
+    volumes:
+      - ./../../02_web/ngx-admin:/app
+    ports:
+      - "4200:4200"
+  mguser:
+    image: "node:alpine"
+    container_name: "mguser-service"
+    depends_on: 
+      - pgcore
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+        - NODE_ENV=development
+        - PORT=3000
+    ports:
+        - "3000:3000"
+    volumes:
+        - ./../../03_core/01_mguser:/home/node/app
+    command: sh -c "npm install && npm start"

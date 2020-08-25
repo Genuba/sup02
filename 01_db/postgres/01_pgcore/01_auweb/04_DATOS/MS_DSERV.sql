@@ -1,0 +1,2 @@
+INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Crear usuario','/pages/administrador/usuario',1);
+INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Pool usuarios','/pages/administrador/usuarios',1);

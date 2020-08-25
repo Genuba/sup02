@@ -1,0 +1,7 @@
+-- INSTALL OBJECTS...
+
+\i 01_auweb/01_TABLAS/INSTALL.sql
+\i 01_auweb/02_TIPOS/INSTALL.sql
+\i 01_auweb/03_FUNCIONES/INSTALL.sql
+\i 01_auweb/04_DATOS/INSTALL.sql
+

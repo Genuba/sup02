@@ -1,0 +1,1 @@
+INSERT INTO ms_tmodu(modu_name, modu_icon, modu_desc) VALUES ('Administrador','lock-outline','crear, modificar, eliminar usuario');

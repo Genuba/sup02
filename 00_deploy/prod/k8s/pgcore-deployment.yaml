@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgcore-deployment
+  labels:
+    app: pgcore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgcore
+  template:
+    metadata:
+      labels:
+        app: pgcore
+    spec:
+      containers:
+        - name: pgcore
+          image: genuba/pgcore:latest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: pgcore-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgredb
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: pgcore-pv-claim
+

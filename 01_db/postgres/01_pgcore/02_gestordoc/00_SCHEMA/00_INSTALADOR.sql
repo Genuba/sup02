@@ -1,0 +1,8 @@
+-- CREANDO USER
+\i 02_gestordoc/00_SCHEMA/01_USER.sql
+
+-- CREANDO SCHEMAS
+\i 02_gestordoc/00_SCHEMA/02_SCHEMAS.sql
+
+
+

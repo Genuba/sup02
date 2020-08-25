@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR /home/node/app
+
+COPY . .
+
+EXPOSE 3000
+
+CMD npm install \
+    && npm start

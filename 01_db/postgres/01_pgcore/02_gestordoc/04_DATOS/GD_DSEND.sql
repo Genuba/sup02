@@ -1,0 +1,2 @@
+--INSERT INTO us_tpusr( purs_user, purs_rol)
+--	VALUES (1, 1);
