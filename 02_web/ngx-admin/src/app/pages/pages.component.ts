@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MENU_PRINCIPAL, MENU_ITEMS } from './pages-menu';
 import { PagesService } from './pages.service';
 import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
+import { AuthGuard } from '../guards/auth-guard.service';
 
 @Component({
   selector: 'ngx-pages',
@@ -17,18 +18,10 @@ import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
 export class PagesComponent {
 
   menu = [];
-  user:any = {};
+  user:any = {}
 
-  constructor(private pagesServices :PagesService,private authService: NbAuthService) {
-
-    this.authService.onTokenChange()
-      .subscribe((token: NbAuthJWTToken) => {
-
-        if (token.isValid()) {
-          this.user = token.getPayload(); 
-        }
-
-      });
+  constructor(private pagesServices :PagesService,authGuard: AuthGuard) {
+    this.user = authGuard.user
   }
 
   ngOnInit(): void {

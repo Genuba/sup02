@@ -36,13 +36,13 @@ do
 		if [ "$SUPDEPLOY" = "dev" ] 
 		then
 			uninstall
-			sudo rm -rf 02_web/01_client/node_modules
+			sudo rm -rf 02_web/ngx-admin/node_modules
 			sudo rm -rf 03_core/01_mguser/node_modules
 		fi
 		export SUPDEPLOY=prod
 
 		docker build -t pgcore ./01_db/postgres/01_pgcore/
-		docker build -t client ./02_web/01_client/
+		docker build -t client ./02_web/ngx-admin/
 		docker build -t mguser ./03_core/01_mguser/
 
 		docker tag pgcore genuba/pgcore
