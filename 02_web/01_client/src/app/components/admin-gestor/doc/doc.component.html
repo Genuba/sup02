@@ -1,0 +1,59 @@
+<div class="float-left">
+    <app-nav-template></app-nav-template>
+</div>
+  
+<div class="float w-50 mx-auto"> 
+  <br><br>
+  <form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Tipo de Documento</label>
+        <select class="custom-select mr-sm-2" name="type" id="type" [(ngModel)]="Data" required>
+          <option selected>seleccione</option>
+          <option *ngFor="let data of data" [value]="data.type_type">
+            {{data.type_class}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Gestión</label>
+        <select class="custom-select mr-sm-2" id="send" name="send" ngModel required>
+          <option selected>seleccione</option>
+          <option value="email">Envio Correo Electrónico</option>
+          <option value="físico">Envio correspondencia física</option>
+          <option value="ninguno">Ninguno</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputUsuario">Usuario</label>
+        <input type="user" class="form-control" id="user" name="user" placeholder="Usuario" ngModel required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputReview">Revisor</label>
+        <input type="review" class="form-control" id="review" name="review" placeholder="Revisor" ngModel required>
+      </div>
+    </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputSender">Remitente</label>
+          <input type="sender" class="form-control" id="sender" name="sender" placeholder="Sender" ngModel required>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="mr-sm-2" for="inlineFormCustomSelect">Receptor</label>
+          <select class="custom-select mr-sm-2" id="rec" name="rec" ngModel required>
+            <option selected>seleccione</option>
+            <option value="1">rec 1</option>
+            <option value="2">rec 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="inputAsunto">Asunto</label>
+        <input type="asunto" class="form-control" id="asunto" name="asunto" placeholder="Asunto" ngModel required>
+      </div>
+    <br>  <br>  <br>    
+    <input type="submit" class="btn btn-success" value="Enviar">    
+  </form>
+</div>

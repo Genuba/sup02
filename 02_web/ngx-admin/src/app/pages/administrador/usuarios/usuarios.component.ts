@@ -12,10 +12,10 @@ import { LocalDataSource } from 'ng2-smart-table';
 export class UsuariosComponent {
 
   settings = {
-
     actions: {
     add: false,
     edit:false,
+    delete:false,
     custom:[{ name:'editar', title: '<i class="nb-edit"></i>'}],
     },
     
@@ -89,5 +89,13 @@ export class UsuariosComponent {
       event.confirm.reject();
     }
   }
-  }
 
+  editar(event): void{
+   if (window.confirm('Are you sure you want to edit?')) {
+    this.router.navigate(['/pages/administrador/usuario/3']);
+   event.confirm.resolve();
+  } else {
+  event.confirm.reject();
+  }
+  }
+}

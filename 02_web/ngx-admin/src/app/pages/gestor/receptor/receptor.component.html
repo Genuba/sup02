@@ -1,0 +1,23 @@
+<form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Nuevo Receptor</nb-card-header>
+      <nb-card-body>
+        <div class="full-name-inputs">
+          <input type="text" nbInput class="form-control" id="nombre" required name="nombre" fullWidth ngModel placeholder="Nombre">
+          <input type="text" nbInput class="direccion" id="clase" required name="direccion" fullWidth ngModel placeholder="Dirección">
+        </div>
+        <div class="full-name-inputs">
+          <input type="text" nbInput fullWidth class="form-control" id="email" required name="email" ngModel placeholder="Email">
+          <input type="text" nbInput class="form-control" id="telefono" required name="telefono" ngModel fullWidth placeholder="Teléfono">
+        </div>  
+        <input type="text" nbInput class="form-control" id="descripcion" required name="descripcion" fullWidth ngModel shape="rectangle" placeholder="Descripción">
+      </nb-card-body>
+    </nb-card>
+    <div class="buttons-row">
+      <input type="submit" class="btn btn-success" value="Enviar">  
+    </div>
+  </div>
+</div>
+</form>

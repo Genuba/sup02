@@ -19,6 +19,14 @@ services:
     volumes:
       - ./../../01_db/postgres/00_pgdata:/var/lib/postgresql/data
       - ./../../01_db/postgres/01_pgcore:/var/lib/postgresql/01_pgcore
+  client:
+    build: "./../../02_web/01_client"
+    image: "client"
+    container_name: "client-service"
+    volumes:
+      - ./../../02_web/01_client:/app
+    ports:
+      - "4200:4200"
   ngxadmin:
     build: "./../../02_web/ngx-admin"
     image: "ngxadmin"
@@ -26,7 +34,7 @@ services:
     volumes:
       - ./../../02_web/ngx-admin:/app
     ports:
-      - "4200:4200"
+      - "4300:4200"
   mguser:
     image: "node:alpine"
     container_name: "mguser-service"
@@ -41,4 +49,19 @@ services:
         - "3000:3000"
     volumes:
         - ./../../03_core/01_mguser:/home/node/app
+    command: sh -c "npm install && npm start"
+  mgdoc:
+    image: "node:alpine"
+    container_name: "mgdoc-service"
+    depends_on: 
+        - pgcore
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+          - NODE_ENV=development
+          - PORT=3000
+    ports:
+          - "3100:3000"
+    volumes:
+          - ./../../03_core/02_mgdoc:/home/node/app
     command: sh -c "npm install && npm start"

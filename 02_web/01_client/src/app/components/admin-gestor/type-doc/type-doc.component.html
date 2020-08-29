@@ -1,0 +1,35 @@
+<div class="float-left">
+    <app-nav-template></app-nav-template>
+  </div>
+  
+<div class="float w-50 mx-auto"> 
+  <br><br>
+  <form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputClase">Clase</label>
+        <input type="clase" class="form-control" id="clase" name="clase" placeholder="Clase" ngModel required>
+      </div> 
+      <div class="form-group col-md-6">
+          <label for="inputNombre">Nombre</label>
+          <input type="nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre" ngModel required>
+      </div>
+    </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCode">Código</label>
+          <input type="code" class="form-control" id="code" name="code" placeholder="Código" ngModel required>
+        </div>
+      </div>
+    <div>
+      <label for="picked">Cargar plantilla</label>
+    <div>
+      <input type="file" id="rute" name="rute" ngModel required #picked
+        (click)="message=''"
+        (change)="onPicked(picked)">
+    </div>
+  </div>
+    <br>  <br>  <br>    
+    <input type="submit" class="btn btn-success" value="Enviar">    
+  </form>
+</div>

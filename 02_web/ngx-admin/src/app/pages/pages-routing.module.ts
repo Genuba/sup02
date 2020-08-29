@@ -18,11 +18,21 @@ const routes: Routes = [{
       path: 'iot-dashboard',
       component: DashboardComponent,
     },
+    //
     {
       path: 'administrador',
       loadChildren: () => import('./administrador/administrador.module')
         .then(m => m.AdministradorModule),
     },
+    //
+    //
+    {
+      path: 'gestor',
+      loadChildren: () => import('./gestor/gestor.module')
+        .then(m => m.GestorModule),
+    },
+    //
+
     {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')

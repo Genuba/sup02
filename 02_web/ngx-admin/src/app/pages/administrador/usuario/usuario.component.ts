@@ -82,7 +82,7 @@ export class UsuarioComponent {
     } as IDtoUsuarios;  
     this.usuarioService.putUsuario(this.id, usuario).subscribe(data =>{
       if(data.to_ge_rta.rta_boo){ 
-        this.router.navigate(['/usuarios']);
+        this.router.navigate(['/pages/administrador/usuarios']);
         alert(data.to_ge_rta.rta_msn)
       }else{
          alert(data.to_ge_rta.rta_msn)

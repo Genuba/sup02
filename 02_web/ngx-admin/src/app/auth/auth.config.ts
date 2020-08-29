@@ -16,7 +16,7 @@ export const AUTH_OPTIONS: NbAuthOptions = {
                 endpoint: 'login',
                 method: 'post',
                 redirect: { success: '/pages/dashboard', failure: null },
-                defaultErrors: ['Email o password incorrectos. Intenta nuevamente'],
+                defaultErrors: ['Usuario o password incorrectos. Intenta nuevamente'],
                 defaultMessages: ['En breve seras redirigido al Home'],
             },
             register: {

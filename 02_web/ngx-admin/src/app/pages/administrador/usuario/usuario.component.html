@@ -1,53 +1,59 @@
 <form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
-<div class="row">
-  <div class="col-lg-6">
-    <nb-card> 
-      <nb-card-header>Creación de usuario</nb-card-header>
-      <nb-card-body> 
-        <input type="text" nbInput class="form-control" id="usuario" required name="usuario" fullWidth placeholder="usuario"[(ngModel)]="usuario.user_alias">
-        <div class="full-name-inputs">
-          <input type="text" nbInput class="form-control" id="nombre" name="nombre" [(ngModel)]="usuario.psna_nomb" required fullWidth placeholder="nombre">
-          <input type="text" nbInput class="form-control" id="apellido" name="apellido" [(ngModel)]="usuario.psna_apdo" required fullWidth placeholder="apellido">
-        </div>
-        <input type="password" nbInput class="form-control" id="password" name="password" fullWidth placeholder="Password" ngModel required>
-        <div class="full-name-inputs">
-          <input type="text" class="form-control" id="documento" name="documento" nbInput fullWidth placeholder="Numero de documento" [(ngModel)]="usuario.psna_ndoc" required>
-          <input type="text"class="form-control" id="telefono" name="telefono"  nbInput fullWidth placeholder="Telefono" [(ngModel)]="usuario.psna_telf" required>
-        </div>
-        <input type="text"  class="form-control" id="email" name="email" nbInput fullWidth shape="rectangle" placeholder="Email" [(ngModel)]="usuario.psna_email" required>
-        <input type="text" class="form-control" id="direccion" name="direccion" nbInput fullWidth shape="rectangle" placeholder="Direccion" [(ngModel)]="usuario.psna_dirc" required>
-      </nb-card-body>
-    </nb-card>
+  <div class="row">
+    <div class="col-lg-6">
+      <nb-card>
+        <nb-card-header>Creación de usuario</nb-card-header>
+        <nb-card-body>
+          <input type="text" nbInput class="form-control" id="usuario" required name="usuario" fullWidth
+            placeholder="usuario" [(ngModel)]="usuario.user_alias">
+          <div class="full-name-inputs">
+            <input type="text" nbInput class="form-control" id="nombre" name="nombre" [(ngModel)]="usuario.psna_nomb"
+              required fullWidth placeholder="nombre">
+            <input type="text" nbInput class="form-control" id="apellido" name="apellido"
+              [(ngModel)]="usuario.psna_apdo" required fullWidth placeholder="apellido">
+          </div>
+          <input type="password" nbInput class="form-control" id="password" name="password" fullWidth
+            placeholder="Password" ngModel required>
+          <div class="full-name-inputs">
+            <input type="text" class="form-control" id="documento" name="documento" nbInput fullWidth
+              placeholder="Numero de documento" [(ngModel)]="usuario.psna_ndoc" required>
+            <input type="text" class="form-control" id="telefono" name="telefono" nbInput fullWidth
+              placeholder="Telefono" [(ngModel)]="usuario.psna_telf" required>
+          </div>
+          <input type="text" class="form-control" id="email" name="email" nbInput fullWidth shape="rectangle"
+            placeholder="Email" [(ngModel)]="usuario.psna_email" required>
+          <input type="text" class="form-control" id="direccion" name="direccion" nbInput fullWidth shape="rectangle"
+            placeholder="Direccion" [(ngModel)]="usuario.psna_dirc" required>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="col-lg-6">
+      <nb-card>
+        <nb-card-header>Rol</nb-card-header>
+        <nb-card-body>
+          <nb-select id="rol" name="rol" [(ngModel)]="usuario.rol_rol" required>
+            <nb-option selected>seleccione</nb-option>
+            <nb-option value="1">Administrador</nb-option>
+            <nb-option value="2">Usuario 1</nb-option>
+          </nb-select>
+        </nb-card-body>
+      </nb-card>
 
-  </div>
-  <div class="col-lg-6">
+      <nb-card>
+        <nb-card-header>Estado de Usuario</nb-card-header>
+        <nb-card-body>
+          <div class="validation-checkboxes">
+            <nb-checkbox status="success">Habilitado</nb-checkbox>
+            <nb-checkbox status="danger">Inhabilitado</nb-checkbox>
+          </div>
+        </nb-card-body>
+      </nb-card>
 
-    <nb-card>
-      <nb-card-header>Rol</nb-card-header>
       <nb-card-body>
-        <nb-select id="rol" name="rol" [(ngModel)]="usuario.rol_rol" required>
-          <nb-option selected>seleccione</nb-option>
-          <nb-option value="1">Administrador</nb-option>
-          <nb-option value="2">Usuario 1</nb-option>
-        </nb-select>
-      </nb-card-body>
-    </nb-card>
-
-    <nb-card>
-      <nb-card-header>Estado de Usuario</nb-card-header>
-      <nb-card-body>
-        <div class="validation-checkboxes">
-          <nb-checkbox status="success">Habilitado</nb-checkbox>
-          <nb-checkbox status="danger">Inhabilitado</nb-checkbox>
+        <div class="buttons-row">
+          <input type="submit" class="btn btn-success" value="Enviar">
         </div>
       </nb-card-body>
-    </nb-card>
-
-    <nb-card-body>
-      <div class="buttons-row">
-        <input type="submit" class="btn btn-success" value="Enviar">  
-      </div>
-    </nb-card-body>
+    </div>
   </div>
-</div>
-</form> 
+</form>

@@ -1,0 +1,56 @@
+<form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Crear Documento</nb-card-header>
+      <nb-card-body>
+        <div class="full-name-inputs">
+          <input type="text" nbInput class="form-control" id="user" required name="user" fullWidth ngModel placeholder="Usuario creador">
+          <input type="text" nbInput class="form-control" id="review" required name="review" fullWidth ngModel placeholder="Revisor">
+        </div>
+        <div class="full-name-inputs">
+          <input type="text" nbInput class="form-control" id="sender" required name="sender" fullWidth ngModel placeholder="Remitente">
+          <input type="text" nbInput class="form-control" id="receptor" required name="receptor" fullWidth placeholder="Receptor">
+        </div>
+        <input type="text" nbInput class="form-control" id="asunto" required name="asunto" fullWidth ngModel shape="rectangle" placeholder="Asunto">
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Seleccione Tipo de Documento</nb-card-header>
+      <nb-card-body> 
+        <nb-select selected="1">
+          <nb-option *ngFor="let data of data" [value]="data.type_type"> {{data.type_class}}</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+    
+  </div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Gestión</nb-card-header>
+      <nb-card-body>
+        <nb-select selected="1">
+          <nb-option value="1">Envío Correo Electrónico</nb-option>
+          <nb-option value="2">Envío Correspondencia Física</nb-option>
+          <nb-option value="2">Envío para Respuesta</nb-option>
+          <nb-option value="2">Ninguno</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Documento</nb-card-header>
+      <nb-card-body>
+        <div class="validation-checkboxes">
+          <nb-checkbox status="danger">Anular</nb-checkbox>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card-body>
+      <div class="buttons-row">
+        <input type="submit" class="btn btn-success" value="Enviar">  
+      </div>
+    </nb-card-body>
+  </div>
+</div>
+</form>

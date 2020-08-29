@@ -1,0 +1,36 @@
+<form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Nuevo Tipo Documento</nb-card-header>
+      <nb-card-body>
+        <div class="full-name-inputs">
+          <input type="text" nbInput class="form-control" id="clase" required name="clase" fullWidth ngModel placeholder="clase">
+          <input type="text" nbInput class="form-control" id="nombre" required name="nombre" fullWidth ngModel placeholder="nombre">
+        </div>
+        <div class="full-name-inputs">
+          <input type="text" nbInput  class="form-control" id="code" required name="code"  fullWidth ngModel placeholder="Código identificador">
+        </div>
+        <input type="text" nbInput  fullWidth shape="rectangle" placeholder="Descripción vacio por agregar">
+        <input type="text" nbInput fullWidth shape="rectangle" placeholder="Responsable vacio por agregar">
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Cargar Plantilla</nb-card-header>
+      <nb-card-body>
+        <p>
+          Cargue el archivo:
+          <input type="file" name="Plantilla cargada" id="rute" ngModel required name="rute" >
+        </p>
+      </nb-card-body>
+    </nb-card>
+    <nb-card-body>
+      <div class="buttons-row">
+        <input type="submit" class="btn btn-success" value="Enviar">
+      </div>
+    </nb-card-body>
+  </div>
+</div>
+</form>

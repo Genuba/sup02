@@ -1,0 +1,37 @@
+<div class="float-left">
+  <app-nav-template></app-nav-template>
+</div>
+
+<div class="float w-50 mx-auto"> 
+  <br><br>
+  <form class="box" #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputNombre">Nombre</label>
+              <input type="nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputDireccion">Direccion</label>
+            <input type="direccion" class="form-control" id="direccion" name="direccion" placeholder="Dirección" ngModel required>
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" ngModel required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputTelefono">Telefono</label>
+            <input type="telefono" class="form-control" id="telefono" name="telefono" placeholder="telefono" ngModel required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputDescripcion">Descripción</label>
+            <input type="descripcion" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" ngModel required>
+        </div>
+      </div>
+    <br>  <br>  <br>    
+    <input type="submit" class="btn btn-success" value="Enviar">    
+  </form>
+</div>

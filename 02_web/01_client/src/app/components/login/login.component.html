@@ -1,0 +1,18 @@
+<div class="login-container">
+    <form class="box" #loginForm="ngForm" (ngSubmit)="login(loginForm)" > 
+      <h2>Sign in</h2>
+      <br>
+      <div class="input-field">
+        <input type="text" name="usuario" id="usuario" autocomplete="off" ngModel required>
+        <label for="usuario">Usuario</label>
+      </div>
+      <br><br>
+      <div class="input-field">
+        <input type="password" name="password" id="password" ngModel required>
+        <label for="password">Password</label>
+      </div>
+      <br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+   

@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'usuario',
         component: UsuarioComponent,
       },
+      {
+        path: 'usuario/:id',
+        component: UsuarioComponent,
+      },
       { 
         path: 'usuarios',
         component: UsuariosComponent,
