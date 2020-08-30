@@ -39,8 +39,8 @@ import { NbAuthModule, NbAuthJWTInterceptor, NB_AUTH_TOKEN_INTERCEPTOR_FILTER, N
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    NgxEchartsModule.forRoot({echarts}),
     NbAuthModule.forRoot(AUTH_OPTIONS),
+    NgxEchartsModule.forRoot({echarts}),
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
