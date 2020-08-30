@@ -1,8 +1,9 @@
 const{ Router }= require ('express');
 const router = Router();
-const pool =require('../database.js');
+const pool = require('../database.js');
+const verify = require('../verifyToken.js');
 
-router.post('/', async (req, res) => {
+router.post('/', verify, async (req, res) => {
     try{
         const {doc_doc,doc_asunto, doc_user, doc_review, doc_sender, doc_send, doc_code, doc_cons, doc_rec, doc_rute, doc_type, doc_cod}= await req.body;
         if(doc_asunto && doc_user && doc_send && doc_rec && doc_type){ 
@@ -20,7 +21,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.get('/', async (req, res) => {
+router.get('/',verify, async (req, res) => {
     try{
         const resdb = await pool.query("SELECT type_type, type_class FROM ab_web_gd.gd_ttype")
         var obj = JSON.parse(JSON.stringify(resdb.rows))

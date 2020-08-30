@@ -1,8 +1,9 @@
 const{ Router }= require ('express');
 const router = Router();
 const pool = require('../database.js');
+const verify = require('../verifyToken.js');
 
-router.get('/', async (req, res) => {
+router.get('/',verify, async (req, res) => {
     try{
         const resdb = await pool.query("SELECT * FROM gd_fu_consultareceivers()")
         var obj = JSON.parse(JSON.stringify(resdb.rows))

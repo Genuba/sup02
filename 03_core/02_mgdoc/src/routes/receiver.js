@@ -1,8 +1,9 @@
 const{ Router }= require ('express');
 const router = Router();
 const pool =require('../database.js');
+const verify = require('../verifyToken.js');
 
-router.post('/', async (req, res) => {
+router.post('/',verify, async (req, res) => {
     try{ 
         const {rec_rec,rec_name, rec_address, rec_email, rec_desc, rec_telf}= await req.body;
         if(rec_name && rec_email && rec_desc){ 
