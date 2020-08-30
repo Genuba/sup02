@@ -23,6 +23,7 @@ import {
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { AuthGuard } from './guards/auth-guard.service';
+import { AUTH_OPTIONS } from './auth/auth.config';
 import { NbAuthModule, NbAuthJWTInterceptor, NB_AUTH_TOKEN_INTERCEPTOR_FILTER, NbAuthJWTToken } from '@nebular/auth';
 
 @NgModule({
@@ -38,7 +39,7 @@ import { NbAuthModule, NbAuthJWTInterceptor, NB_AUTH_TOKEN_INTERCEPTOR_FILTER, N
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    NbAuthModule.forRoot(),
+    NbAuthModule.forRoot(AUTH_OPTIONS),
     NgxEchartsModule.forRoot({echarts}),
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
