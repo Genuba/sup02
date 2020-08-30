@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');//middleware procesa datos antes que servidor reciba
 
-    
 //  settings 
     const app = express();
     app.set('port', process.env.PORT || 3000);
