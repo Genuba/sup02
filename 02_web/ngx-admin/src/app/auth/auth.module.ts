@@ -22,7 +22,7 @@ import { RegisterComponent } from './register/register.component';
     NbInputModule,
     NbButtonModule,
     NbCheckboxModule,
-    NgxAuthRoutingModule,
+    NgxAuthRoutingModule
   ],
   declarations: [
     LoginComponent,
