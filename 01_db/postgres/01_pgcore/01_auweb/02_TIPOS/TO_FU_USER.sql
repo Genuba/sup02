@@ -12,7 +12,7 @@ CREATE TYPE to_fu_user AS
 	psna_telf CHARACTER varying(30),
 	psna_email CHARACTER varying(30),
 	rol_rol integer,
-	rol_nomb CHARACTER varying(20)
+	rol_nomb CHARACTER varying(100)
 );
 
 ALTER TYPE to_fu_user

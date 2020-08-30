@@ -10,6 +10,6 @@
 
 export const environment = {
   production: false,
-  mgUserUrl: 'http://localhost:3000/api/',
-  mgDocUrl: 'http://localhost:3100/api/'
+  mgUserUrl: 'http://127.0.0.1:3000/api/',
+  mgDocUrl: 'http://127.0.0.1:3100/api/'
 };
