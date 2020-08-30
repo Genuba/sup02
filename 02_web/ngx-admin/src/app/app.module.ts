@@ -39,7 +39,6 @@ import { NbAuthModule, NbAuthJWTInterceptor, NB_AUTH_TOKEN_INTERCEPTOR_FILTER, N
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    NbAuthModule.forRoot(),
     NgxEchartsModule.forRoot({echarts}),
     NbAuthModule.forRoot(AUTH_OPTIONS),
     NbChatModule.forRoot({
