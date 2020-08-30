@@ -13,7 +13,6 @@ import {
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AUTH_OPTIONS } from './auth.config';
 
 @NgModule({
   imports: [
@@ -24,8 +23,7 @@ import { AUTH_OPTIONS } from './auth.config';
     NbInputModule,
     NbButtonModule,
     NbCheckboxModule,
-    NgxAuthRoutingModule,
-    NbAuthModule.forRoot(AUTH_OPTIONS),
+    NgxAuthRoutingModule
   ],
   declarations: [
     LoginComponent,
