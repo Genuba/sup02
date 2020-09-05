@@ -19,14 +19,6 @@ services:
     volumes:
       - ./../../01_db/postgres/00_pgdata:/var/lib/postgresql/data
       - ./../../01_db/postgres/01_pgcore:/var/lib/postgresql/01_pgcore
-  client:
-    build: "./../../02_web/01_client"
-    image: "client"
-    container_name: "client-service"
-    volumes:
-      - ./../../02_web/01_client:/app
-    ports:
-      - "4200:4200"
   ngxadmin:
     build: "./../../02_web/ngx-admin"
     image: "ngxadmin"
