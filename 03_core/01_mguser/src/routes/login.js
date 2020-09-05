@@ -21,7 +21,11 @@ router.post('/', async (req, res) => {
                 const idUsuario = respuesta.to_ge_rta['rta_val']
 
                 if(idUsuario != null){
-                    const token = jwt.sign ({ id: idUsuario }, process.env.JWT_SECRET_KEY)
+                    var id = idUsuario;
+                    const resdb = await pool.query("SELECT * FROM us_fu_consultausuario("+id+")")
+                    var obj = JSON.parse(JSON.stringify(resdb.rows))[0]
+
+                    const token = jwt.sign ({ id: obj.user_user,rol: obj.rol_rol,name: obj.psna_nomb }, process.env.JWT_SECRET_KEY)
                     respuesta.token = token
 
                     res.json(respuesta);
