@@ -10,16 +10,13 @@ import { AuthGuard } from '../guards/auth-guard.service';
 export class PagesService {
 
   readonly url = environment.mgUserUrl + 'menu';
-  user:any = {}
 
-  constructor(private httpClient: HttpClient,authGuard: AuthGuard){
-    this.user = authGuard.user
-  }
+  constructor(private httpClient: HttpClient,private authGuard: AuthGuard){}
 
 
   getMenusUsuario(): Observable<any> {
     try{
-      return this.httpClient.get<any>(this.url+'/'+this.user.rol)
+      return this.httpClient.get<any>(this.url+'/'+this.authGuard.user.rol)
     } 
     catch (error) {
       console.log(error)
