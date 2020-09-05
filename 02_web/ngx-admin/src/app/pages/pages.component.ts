@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 import { MENU_PRINCIPAL, MENU_ITEMS } from './pages-menu';
 import { PagesService } from './pages.service';
-import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
-import { AuthGuard } from '../guards/auth-guard.service';
+
 
 @Component({
   selector: 'ngx-pages',
@@ -18,15 +17,12 @@ import { AuthGuard } from '../guards/auth-guard.service';
 export class PagesComponent {
 
   menu = [];
-  user:any = {}
 
-  constructor(private pagesServices :PagesService,authGuard: AuthGuard) {
-    this.user = authGuard.user
-  }
+  constructor(private pagesServices :PagesService) {}
 
   ngOnInit(): void {
     try{
-      this.pagesServices.getMenusUsuario(this.user.id)
+      this.pagesServices.getMenusUsuario()
       .subscribe(data => {
         this.menu = MENU_PRINCIPAL.concat(data,MENU_ITEMS);
       });

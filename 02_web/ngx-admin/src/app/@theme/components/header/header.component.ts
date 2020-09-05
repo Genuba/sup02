@@ -6,6 +6,7 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { PagesService } from '../../../pages/pages.service';
 
 @Component({
   selector: 'ngx-header',
@@ -46,6 +47,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private userService: UserData,
+              private pagesService: PagesService,
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService
               ) {
@@ -54,9 +56,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
 
+    var usuario = { name: this.pagesService.user.name, picture: 'assets/images/user.png' }
+
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
+      .subscribe((users: any) => this.user = usuario);
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()

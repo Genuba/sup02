@@ -3,21 +3,19 @@ const router = Router();
 const pool =require('../database.js');
 const verify = require('../verifyToken.js');
  
-router.get('/:id',verify, async (req, res) => { 
+router.get('/:rol',verify, async (req, res) => { 
     try{
-        var user_user = req.params.id;
+        var rol_rol = req.params.rol;
         
-        if(user_user){ 
+        if(rol_rol){ 
 
             var query = "SELECT mo.modu_modu,mo.modu_name,mo.modu_icon,se.serv_name,se.serv_link \
-            FROM ms_tmodu mo \
-            inner join ab_auth_us.ms_tserv se ON se.serv_modu = mo.modu_modu \
-            inner join ab_auth_us.ms_tperse pe ON pe.perse_serv = se.serv_serv \
-            inner join ab_auth_us.ms_trlsv rl ON rl.rlsv_perse = pe.perse_perse \
-            inner join ab_auth_us.us_trol ro ON ro.rol_rol = rl.rlsv_rol \
-            inner join ab_auth_us.us_tuser us ON us.user_rol = ro.rol_rol \
-            GROUP by mo.modu_modu,us.user_user,mo.modu_name,mo.modu_icon,se.serv_name,se.serv_link \
-            having us.user_user = "+user_user
+                        FROM ms_tmodu mo \
+                        inner join ms_tserv se ON se.serv_modu = mo.modu_modu \
+                        inner join ms_tperse pe ON pe.perse_serv = se.serv_serv \
+                        inner join ms_trlsv rl ON rl.rlsv_perse = pe.perse_perse \
+                        GROUP by mo.modu_modu,mo.modu_name,mo.modu_icon,se.serv_name,se.serv_link,rl.rlsv_rol \
+                        having rl.rlsv_rol = "+rol_rol
 
             //Add user db
             const resdb = await pool.query(query);
