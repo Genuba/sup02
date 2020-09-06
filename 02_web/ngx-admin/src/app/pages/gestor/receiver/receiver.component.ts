@@ -8,11 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'ngx-receptor',
-  styleUrls: ['./receptor.component.scss'],
-  templateUrl: './receptor.component.html',
+  selector: 'ngx-receiver',
+  styleUrls: ['./receiver.component.scss'],
+  templateUrl: './receiver.component.html',
 })
-export class ReceptorComponent {
+export class ReceiverComponent {
  
   starRate = 2;
   heartRate = 4;
@@ -41,7 +41,7 @@ export class ReceptorComponent {
     console.log(addReceptor)
     this.receiverService.agregarReceptor(addReceptor).subscribe(data =>{
       if(data.to_ge_rta.rta_boo){ 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/pages/gestor/documentos']);
         alert(data.to_ge_rta.rta_msn)
       }else{
          alert(data.to_ge_rta.rta_msn)

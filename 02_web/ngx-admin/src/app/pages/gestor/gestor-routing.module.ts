@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { GestorComponent } from './gestor.component';
 import { TipoComponent } from './tipo/tipo.component';
-import { ReceptorComponent } from './receptor/receptor.component';
+import { ReceiverComponent } from './receiver/receiver.component';
+import { ReceiversComponent } from './receivers/receivers.component';
 import { DocumentoComponent } from './documento/documento.component';
 import { DocumentosComponent } from './documentos/documentos.component';
  
@@ -19,7 +20,11 @@ const routes: Routes = [
       },
       { 
         path: 'receptor',
-        component: ReceptorComponent,
+        component: ReceiversComponent,
+      },
+      { 
+        path: 'receptors',
+        component: ReceiversComponent,
       },
       { 
         path: 'documento',
@@ -46,7 +51,8 @@ export class FormsRoutingModule {
 
 export const routedComponents = [
   GestorComponent,
-  ReceptorComponent,
+  ReceiverComponent,
+  ReceiversComponent,
   DocumentoComponent,
   DocumentosComponent,
 ];
