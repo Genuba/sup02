@@ -15,11 +15,13 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';//borrar cuando consuma el
 import { ThemeModule } from '../../@theme/theme.module';
 import { FormsRoutingModule, routedComponents } from './gestor-routing.module';
 import { GestorComponent } from './gestor.component';
-import { TipoComponent } from './tipo/tipo.component';
+import { TypeComponent } from './type/type.component';
+import { TypesComponent } from './types/types.component';
+import { TypesService } from './types/types.service';
 import { ReceiverComponent } from './receiver/receiver.component';
 import { ReceiversService } from './receivers/receivers.service';
 import { ReceiversComponent } from './receivers/receivers.component';
-import { TypeDocService } from './tipo/tipo.service';
+import { TypeService } from './type/type.service';
 import { FormsModule as ngFormsModule } from '@angular/forms';
 import { DocumentoComponent } from './documento/documento.component';
 import { ReceiverService } from './receiver/receiver.service';
@@ -46,13 +48,15 @@ import { ReceiverService } from './receiver/receiver.service';
   declarations: [
     ...routedComponents,
     GestorComponent,
-    TipoComponent,
+    TypeComponent,
+    TypesComponent,
     ReceiverComponent,
     ReceiversComponent,     
     DocumentoComponent, 
   ],
   providers: [
-    TypeDocService,
+    TypeService,
+    TypesService,
     ReceiverService,
     ReceiversService
   ],

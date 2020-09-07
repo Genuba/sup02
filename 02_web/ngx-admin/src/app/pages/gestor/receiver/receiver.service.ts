@@ -19,7 +19,7 @@ export class ReceiverService {
 
   constructor(private httpClient: HttpClient){} 
 
-  agregarReceptor(IDtoReceiver: IDtoReceiver): Observable<IRespuestaPg> {
+  agregarReceiver(IDtoReceiver: IDtoReceiver): Observable<IRespuestaPg> {
     try{
      return this.httpClient.post<IRespuestaPg>(this.url, IDtoReceiver, httpOptions);
     } 

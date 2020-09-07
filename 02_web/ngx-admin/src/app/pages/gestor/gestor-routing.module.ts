@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { GestorComponent } from './gestor.component';
-import { TipoComponent } from './tipo/tipo.component';
+import { TypeComponent } from './type/type.component';
+import { TypesComponent } from './types/types.component';
 import { ReceiverComponent } from './receiver/receiver.component';
 import { ReceiversComponent } from './receivers/receivers.component';
 import { DocumentoComponent } from './documento/documento.component';
@@ -16,14 +17,18 @@ const routes: Routes = [
     children: [
       {
         path: 'tipo',
-        component: TipoComponent,
+        component: TypeComponent,
+      },
+      {
+        path: 'types',
+        component: TypesComponent,
       },
       { 
         path: 'receptor',
-        component: ReceiversComponent,
+        component: ReceiverComponent,
       },
       { 
-        path: 'receptors',
+        path: 'receivers',
         component: ReceiversComponent,
       },
       { 
@@ -53,6 +58,8 @@ export const routedComponents = [
   GestorComponent,
   ReceiverComponent,
   ReceiversComponent,
+  TypeComponent,
+  TypesComponent,
   DocumentoComponent,
   DocumentosComponent,
 ];

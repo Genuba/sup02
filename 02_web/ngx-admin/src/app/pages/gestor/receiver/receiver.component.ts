@@ -26,11 +26,11 @@ export class ReceiverComponent {
   } 
 
   onSubmit(form: NgForm) {
-      this.agregarReceptor(form)
+      this.agregarReceiver(form)
   }
   
-  agregarReceptor(form: NgForm) {
-    const addReceptor: IDtoReceiver = { 
+  agregarReceiver(form: NgForm) {
+    const addReceiver: IDtoReceiver = { 
       rec_rec: 0,   
       rec_name: form.value.nombre,
       rec_address: form.value.direccion,
@@ -38,8 +38,8 @@ export class ReceiverComponent {
       rec_desc: form.value.descripcion,
       rec_telf: form.value.telefono
     } as IDtoReceiver;  
-    console.log(addReceptor)
-    this.receiverService.agregarReceptor(addReceptor).subscribe(data =>{
+    console.log(addReceiver)
+    this.receiverService.agregarReceiver(addReceiver).subscribe(data =>{
       if(data.to_ge_rta.rta_boo){ 
         this.router.navigate(['/pages/gestor/documentos']);
         alert(data.to_ge_rta.rta_msn)

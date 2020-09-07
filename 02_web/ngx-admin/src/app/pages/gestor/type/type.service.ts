@@ -4,11 +4,11 @@ import { Observable } from 'rxjs/Observable';
 import { IDtoType} from '../dto/idtoType';
 import { IRespuestaPg } from '../irespuestapg';
 import { environment } from '../../../../environments/environment';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
-export class TypeDocService {
+export class TypeService {
   readonly url = environment.mgDocUrl + 'type';
 
   constructor(private httpClient: HttpClient){} 
