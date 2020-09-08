@@ -1,2 +1,3 @@
 INSERT INTO ms_tmodu(modu_name, modu_icon, modu_desc) VALUES ('Administrador','lock-outline','crear, modificar, eliminar usuario');
 INSERT INTO ms_tmodu(modu_name, modu_icon, modu_desc) VALUES ('Gestor Documental','edit-2-outline','crear,modificar,eliminardocumentos,receptores,tipologías');
+INSERT INTO ms_tmodu(modu_name, modu_icon, modu_desc) VALUES ('Gestor de Firmas','edit-2-outline','gestiona los documentos que requieran firmas');

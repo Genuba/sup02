@@ -20,11 +20,14 @@ import { TypesComponent } from './types/types.component';
 import { TypesService } from './types/types.service';
 import { ReceiverComponent } from './receiver/receiver.component';
 import { ReceiversService } from './receivers/receivers.service';
+import { ReceiverService } from './receiver/receiver.service';
 import { ReceiversComponent } from './receivers/receivers.component';
 import { TypeService } from './type/type.service';
 import { FormsModule as ngFormsModule } from '@angular/forms';
-import { DocumentoComponent } from './documento/documento.component';
-import { ReceiverService } from './receiver/receiver.service';
+import { DocComponent } from './doc/doc.component';
+import { DocsComponent } from './docs/docs.component';
+import { DocService } from './doc/doc.service';
+import { DocsService } from './docs/docs.service';
 
 
 @NgModule({
@@ -52,13 +55,16 @@ import { ReceiverService } from './receiver/receiver.service';
     TypesComponent,
     ReceiverComponent,
     ReceiversComponent,     
-    DocumentoComponent, 
+    DocComponent,
+    DocsComponent,
   ],
   providers: [
     TypeService,
     TypesService,
     ReceiverService,
-    ReceiversService
+    ReceiversService,
+    DocService,
+    DocsService,
   ],
 })
 export class GestorModule { }

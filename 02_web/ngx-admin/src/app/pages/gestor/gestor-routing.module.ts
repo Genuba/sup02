@@ -6,8 +6,8 @@ import { TypeComponent } from './type/type.component';
 import { TypesComponent } from './types/types.component';
 import { ReceiverComponent } from './receiver/receiver.component';
 import { ReceiversComponent } from './receivers/receivers.component';
-import { DocumentoComponent } from './documento/documento.component';
-import { DocumentosComponent } from './documentos/documentos.component';
+import { DocComponent } from './doc/doc.component';
+import { DocsComponent } from './docs/docs.component';
  
 
 const routes: Routes = [
@@ -33,11 +33,11 @@ const routes: Routes = [
       },
       { 
         path: 'documento',
-        component: DocumentoComponent,
+        component: DocComponent,
       },
       { 
         path: 'documentos',
-        component: DocumentosComponent,
+        component: DocsComponent,
       },
     ],
   },
@@ -60,7 +60,7 @@ export const routedComponents = [
   ReceiversComponent,
   TypeComponent,
   TypesComponent,
-  DocumentoComponent,
-  DocumentosComponent,
+  DocComponent,
+  DocsComponent,
 ];
 

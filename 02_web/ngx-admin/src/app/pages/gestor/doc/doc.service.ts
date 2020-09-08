@@ -35,7 +35,7 @@ export class DocService {
     }
     catch (error) {
       return null
-    }
+    } 
   } 
 }  
 

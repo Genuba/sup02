@@ -4,3 +4,4 @@ INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Documentos Tipo',
 INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Receptor','/pages/gestor/receptor',2);
 INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Nuevo Documento','/pages/gestor/documento',2);
 INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Consulta de Documentos','/pages/gestor/documentos',2);
+INSERT INTO ms_tserv(serv_name, serv_link, serv_modu) VALUES ('Solicitar firmas','/pages/gestor/gfirmas',3);

@@ -12,3 +12,5 @@ INSERT INTO ms_trlsv(rlsv_rol, rlsv_perse)	VALUES (3, 9);
 INSERT INTO ms_trlsv(rlsv_rol, rlsv_perse)	VALUES (2, 10);
 INSERT INTO ms_trlsv(rlsv_rol, rlsv_perse)	VALUES (3, 10);
 INSERT INTO ms_trlsv(rlsv_rol, rlsv_perse)	VALUES (2, 11);
+INSERT INTO ms_trlsv(rlsv_rol, rlsv_perse)	VALUES (2, 12);
+INSERT INTO ms_trlsv(rlsv_rol, rlsv_perse)	VALUES (3, 12);

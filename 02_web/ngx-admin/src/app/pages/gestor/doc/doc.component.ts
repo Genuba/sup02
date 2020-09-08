@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { DocService } from './documento.service';
+import { DocService } from './doc.service';
 import { IDtoDoc} from '../dto/idtoDoc';
 import { environment } from '../../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
@@ -12,11 +12,11 @@ interface Data {
 }
 
 @Component({
-  selector: 'ngx-documento',
-  styleUrls: ['./documento.component.scss'],
-  templateUrl: './documento.component.html',
+  selector: 'ngx-doc',
+  styleUrls: ['./doc.component.scss'],
+  templateUrl: './doc.component.html',
 })
-export class DocumentoComponent implements OnInit  {
+export class DocComponent implements OnInit  {
 
   starRate = 2;
   heartRate = 4;
@@ -38,12 +38,9 @@ export class DocumentoComponent implements OnInit  {
       doc_doc: 0,   
       doc_asunto: form.value.asunto,
       doc_user: form.value.user,
-      doc_review: form.value.review,
-      doc_sender: form.value.sender,
       doc_send: form.value.send,
       doc_code: " ",
       doc_cons: 1,
-      doc_rec: 1,
       doc_rute: " ",
       doc_type: form.value.type, 
       doc_cod: " "

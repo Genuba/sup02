@@ -25,10 +25,10 @@ AS $BODY$
 			v_consdoc := (SELECT (COALESCE ((SELECT MAX ("doc_cons") FROM gd_tdoc WHERE doc_type = p_to_doc.doc_type), 0)))+1;
 			v_codedoc := (SELECT type_code FROM gd_ttype WHERE type_type = p_to_doc.doc_type);
 			v_code := (SELECT (v_codedoc || v_consdoc) AS code);
-			INSERT INTO gd_tdoc (doc_asunto, doc_user, doc_review, doc_sender, doc_send, doc_code, doc_cons, doc_rec, doc_rute, doc_type, doc_cod) 
-			VALUES (p_to_doc.doc_asunto, p_to_doc.doc_user, p_to_doc.doc_review, p_to_doc.doc_sender, 
+			INSERT INTO gd_tdoc (doc_asunto, doc_user, doc_send, doc_code, doc_cons, doc_rute, doc_type, doc_cod) 
+			VALUES (p_to_doc.doc_asunto, p_to_doc.doc_user, 
 					p_to_doc.doc_send, v_codedoc, v_consdoc, 
-					p_to_doc.doc_rec, p_to_doc.doc_rute, p_to_doc.doc_type, v_code);
+					p_to_doc.doc_rute, p_to_doc.doc_type, v_code);
 			v_mensaje.rta_msn := 'Documento creado código '|| v_code ::text;
 			v_mensaje.rta_boo := 1;
 			

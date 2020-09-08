@@ -15,7 +15,7 @@ AS $BODY$
 DECLARE
 		reg RECORD;
 	BEGIN
-		FOR REG IN SELECT doc_doc, doc_asunto, doc_user, doc_review, doc_sender, doc_code, doc_cons, doc_rec, doc_type, doc_cod FROM ab_web_gd.gd_tdoc
+		FOR REG IN SELECT doc_doc, doc_asunto, doc_user, doc_code, doc_cons, doc_type, doc_cod FROM ab_web_gd.gd_tdoc
 
 		LOOP
 		RETURN NEXT reg;

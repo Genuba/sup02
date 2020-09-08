@@ -30,3 +30,6 @@ INSERT INTO ab_auth_us.ms_tperse(perse_name, perse_icon, perse_serv)
 
 INSERT INTO ab_auth_us.ms_tperse(perse_name, perse_icon, perse_serv)
 	VALUES ( 'Eliminar Documento', '', 6);
+
+INSERT INTO ab_auth_us.ms_tperse(perse_name, perse_icon, perse_serv)
+	VALUES ( 'Solicitar firmas', '', 7);
