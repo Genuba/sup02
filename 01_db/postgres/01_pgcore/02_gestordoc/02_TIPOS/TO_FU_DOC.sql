@@ -5,6 +5,7 @@
 CREATE TYPE to_fu_doc AS
 (
 	doc_doc integer,
+	doc_date character varying(50),
 	doc_asunto character varying(30),
 	doc_user character varying(30),
 	doc_send character varying(30),

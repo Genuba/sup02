@@ -1,5 +1,6 @@
 export interface IDtoDoc {
-    doc_doc: number;   
+    doc_doc: number;
+    doc_date: string,   
     doc_asunto: string;
     doc_user: string;
     doc_review: string;

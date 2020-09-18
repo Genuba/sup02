@@ -36,6 +36,7 @@ export class DocComponent implements OnInit  {
   agregarDocumento(form: NgForm) { 
     const agregarDocumento: IDtoDoc = { 
       doc_doc: 0,   
+      doc_date: " ",
       doc_asunto: form.value.asunto,
       doc_user: form.value.user,
       doc_send: form.value.send,

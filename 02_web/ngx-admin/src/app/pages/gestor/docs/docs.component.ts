@@ -25,6 +25,11 @@ export class DocsComponent {
         type: 'string',
         
       },
+      doc_date: {
+        title: 'Fecha de creación',
+        type: 'string',
+        
+      },
       doc_type: {
         title: 'Tipo',
         type: 'string',
@@ -48,10 +53,6 @@ export class DocsComponent {
       },
       doc_rec: {
         title: 'Receptor',
-        type: 'string',
-      },
-      doc_send: {
-        title: 'Envío',
         type: 'string',
       },
     },
