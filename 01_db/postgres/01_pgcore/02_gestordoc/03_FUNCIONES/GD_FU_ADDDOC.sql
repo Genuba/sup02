@@ -22,8 +22,8 @@ AS $BODY$
 		THEN
 			v_mensaje.rta_msn := 'ya existe un Documento con el mismo asunto';
 			v_mensaje.rta_boo := 0;
-		ELSE
-			v_date := (SELECT current_timestamp))
+		ELSE 
+			v_date := (SELECT current_timestamp);
 			v_consdoc := (SELECT (COALESCE ((SELECT MAX ("doc_cons") FROM gd_tdoc WHERE doc_type = p_to_doc.doc_type), 0)))+1;
 			v_codedoc := (SELECT type_code FROM gd_ttype WHERE type_type = p_to_doc.doc_type);
 			v_code := (SELECT (v_codedoc || v_consdoc) AS code);
