@@ -6,7 +6,7 @@ const verify = require('../verifyToken.js');
 router.post('/', verify, async (req, res) => {
     try{
         const {doc_doc, doc_date, doc_asunto, doc_user, doc_send, doc_code, doc_cons, doc_rute, doc_type, doc_cod}= await req.body;
-        if(doc_asunto && doc_user && doc_send && doc_rec && doc_type){ 
+        if(doc_asunto && doc_user && doc_send && doc_type){ 
             const resdb = await pool.query
             ("SELECT ab_web_gd.gd_fu_adddoc(('"+doc_doc+"','"+doc_date+"','"+doc_asunto+"','"+doc_user+"', '"+doc_send+"', '"+doc_code+"', '"+doc_cons+"', '"+doc_rute+"', '"+doc_type+"',' "+doc_cod+"'))");
             var obj = JSON.parse(JSON.stringify(resdb.rows))[0]

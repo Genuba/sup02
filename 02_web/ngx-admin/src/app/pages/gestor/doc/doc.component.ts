@@ -46,10 +46,11 @@ export class DocComponent implements OnInit  {
       doc_type: form.value.type, 
       doc_cod: " "
     } as IDtoDoc;
+    console.log(agregarDocumento)
     this.docService.agregarDocumento(agregarDocumento).subscribe(data =>{
        console.log(data)
       if(data.to_ge_rta.rta_boo){ 
-        this.router.navigate(['/doc']);
+        this.router.navigate(['/pages/gestor/documentos']);
         alert(data.to_ge_rta.rta_msn)
       }else{
          alert(data.to_ge_rta.rta_msn)
